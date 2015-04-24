@@ -1,0 +1,31 @@
+{% extends "sticode_main.html" %}
+{% block page_title %}News{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-1 sticode-intro">
+            <h3>What is StiCode ?</h3>
+            <p>StiCode is an organization that develop Open Source solution.
+                StiCode is a container of projects. We only develop free solution.
+                At the moment, we are working on two projects that are showed on this website.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="news-container container">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-1">
+            {% for n in news %}
+            <div class="panel panel-default">
+                <div class="panel-heading">{{ n.title }}</div>
+                <div class="panel-body">
+                    {{ n.text }}
+                    <em>Posted on {{ n.postedOn }} by {{ n.author.username }}</em>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/sticode.css' %}" rel="stylesheet" />
+    <title>StiCode {% block page_title %}{% endblock %}</title>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">StiCode</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="#">StiGame</a></li>
+                <li><a href="#">StiCI</a></li>
+                <li><a href="#">LibreSTR</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
