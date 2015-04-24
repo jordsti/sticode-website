@@ -36,7 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'news'
+    'news',
+    'stigame',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -89,4 +90,5 @@ STATICFILES_DIRS = (
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates'),
                  os.path.join(BASE_DIR, 'news/templates'),
+                 os.path.join(BASE_DIR, 'stigame/templates'),
                  ]

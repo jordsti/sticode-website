@@ -1,0 +1,37 @@
+{% extends "stigame_main.html" %}
+{% block page_title %}StiGame Project{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-1 sticode-intro">
+            <h3>What is StiGame ?</h3>
+            <p>StiGame is a C++ library that wrap SDL2 Functions. This give the opportunity to use SDL2 with the object oriented paradigm.
+                Which you can't do in C. StiGame also include other features like event handling with Observer design patterns, a finite state machine to
+                handle the game state for your application. StiGame also include a Graphical user Interface Stack to create interface rapidly for your application.
+            </p>
+        </div>
+    </div>
+</div>
+{% if last_release %}
+<div class="container">
+    <h4>Last Release</h4>
+    {{ last_release.name }}
+</div>
+{% endif %}
+<div class="news-container container">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-1">
+            {% for n in news %}
+            <div class="panel panel-default">
+                <div class="panel-heading">{{ n.title }}</div>
+                <div class="panel-body">
+                    {{ n.text }}
+                    <em>Posted on {{ n.postedOn }} by {{ n.author.username }}</em>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
